@@ -221,7 +221,7 @@ export default class Video extends Component {
           />
           <Image
             style={posterStyle}
-            source={{uri: this.props.poster}}
+            source={this.props.poster}
           />
         </View>
       );
