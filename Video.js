@@ -221,7 +221,7 @@ export default class Video extends Component {
           />
           <Image
             style={posterStyle}
-            source={{uri: this.props.poster}}
+            source={this.props.posterImage}
           />
         </View>
       );
@@ -255,6 +255,14 @@ Video.propTypes = {
 
   /* Wrapper component */
   source: PropTypes.oneOfType([
+    PropTypes.shape({
+      uri: PropTypes.string
+    }),
+    // Opaque type returned by require('./video.mp4')
+    PropTypes.number
+  ]),
+    /* Wrapper component */
+  posterImage: PropTypes.oneOfType([
     PropTypes.shape({
       uri: PropTypes.string
     }),
