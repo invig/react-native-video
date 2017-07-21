@@ -203,7 +203,7 @@ export default class Video extends Component {
       onAudioBecomingNoisy: this._onAudioBecomingNoisy,
     });
 
-    if (this.props.poster && this.state.showPoster) {
+    if ((this.props.poster || this.props.posterImage) && this.state.showPoster) {
       const posterStyle = {
         position: 'absolute',
         left: 0,
@@ -221,7 +221,7 @@ export default class Video extends Component {
           />
           <Image
             style={posterStyle}
-            source={this.props.posterImage}
+            source={this.props.poster || this.props.posterImage}
           />
         </View>
       );
