@@ -205,12 +205,9 @@ export default class Video extends Component {
 
     if ((this.props.poster || this.props.posterImage) && this.state.showPoster) {
       const posterStyle = {
-        position: 'absolute',
-        left: 0,
-        top: 0,
-        right: 0,
-        bottom: 0,
-        resizeMode: 'contain',
+        flex: 1,
+        height: null, 
+        width: null
       };
 
       return (
@@ -220,6 +217,7 @@ export default class Video extends Component {
             {...nativeProps}
           />
           <Image
+            resizeMode="cover"
             style={posterStyle}
             source={this.props.poster || this.props.posterImage}
           />
